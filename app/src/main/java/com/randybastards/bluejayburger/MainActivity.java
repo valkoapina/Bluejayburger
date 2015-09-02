@@ -38,5 +38,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startButtonClick(View view) {
+        findViewById(R.id.imageView).setVisibility(View.VISIBLE);
     }
 }
