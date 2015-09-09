@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
-    public void startButtonClick(View view) {
+    public void startImageClick(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
