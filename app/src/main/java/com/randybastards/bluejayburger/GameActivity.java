@@ -66,17 +66,19 @@ public class GameActivity extends Activity implements TicTacToeView.OnPlayerChoo
     @Override
     public void OnPlayerChoose(TicTacToeView ticTacToeView) {
         int[] position = (int[]) ticTacToeView.getTag();
-        if (currentPlayer == Player.X) {
-            ticTacToeView.setState(TicTacToeView.State.O);
-            currentPlayer = Player.O;
-        } else {
-            ticTacToeView.setState(TicTacToeView.State.X);
-            currentPlayer = Player.X;
-        }
-        if (checkWinConditions(position, ticTacToeView.getState())) {
-            Toast.makeText(GameActivity.this,
-                    currentPlayer.toString() + " wins, ha ha ha!",
-                    Toast.LENGTH_SHORT).show();
+        if(ticTacToeView.getState() == TicTacToeView.State.Blank) {
+            if (currentPlayer == Player.X) {
+                ticTacToeView.setState(TicTacToeView.State.O);
+                currentPlayer = Player.O;
+            } else {
+                ticTacToeView.setState(TicTacToeView.State.X);
+                currentPlayer = Player.X;
+            }
+            if (checkWinConditions(position, ticTacToeView.getState())) {
+                Toast.makeText(GameActivity.this,
+                        currentPlayer.toString() + " wins, ha ha ha!",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
